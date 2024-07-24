@@ -29,3 +29,6 @@ newDate.toLocaleString('default', {
     weekday: "long",
     
 })
+console.log(newDate.toLocaleString('default',{
+    timeStyle : 'short'
+}))
