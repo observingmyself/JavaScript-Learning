@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pardeep singh - function</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Js</li>
+    </ul>
+</body>
+<script>
+
+    // non optimized aproach 
+    function addLanguage (langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('golang')
+    addLanguage('python')
+
+  // optimiiezed approach 
+  function addOptiLanguage (langName){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+
+  }
+  addOptiLanguage("hitesh")
+  addOptiLanguage("course cho course")
+
+  // editing using js query 
+  const myli = document.querySelector("li:nth-child(2)")
+//   myli.innerHTML = "mojo"
+  const newli = document.createElement("li")
+  newli.textContent = "swift"
+  myli.replaceWith(newli)
+
+  // differeent appraoach to edit 
+  const firstElement = document.querySelector("li:first-child")
+  firstElement.outerHTML = "<li>TypeScript</li>"
+
+  // removing last element from ul 
+  const lastElement = document.querySelector('li:last-child')
+  lastElement.remove()
+</script>
+</html>

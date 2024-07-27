@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div)
+    div.setAttribute("class","main-header")
+    div.setAttribute("id","my-id")
+    div.setAttribute("title","header of the page")
+    div.innerText = "chai aur code"
+    document.body.style.backgroundColor = "black"
+    div.style.color = 'white'
+    div.style.fontSize = "40px"
+    div.style.background = "green"
+    div.style.borderRadius = "23px"
+    div.style.display = "flex"
+    div.style.justifyContent = "center"
+    div.style.alignItems = "center"
+    div.style.padding = "12px"
+    div.style.margin = '40px 120px'
+    const newDiv =  document.createTextNode(" luck ju")
+    console.log(newDiv)
+    div.appendChild(newDiv)
+    document.body.appendChild(div)
+    
+</script>
+</html>
