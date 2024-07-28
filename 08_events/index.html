@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #414141;
+            color: aliceblue;
+        }
+        ul{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/6045224/pexels-photo-6045224.jpeg?auto=compress&cs=tinysrgb&w=600" id="one" height="120px" alt="images"> 1</li>
+            <li><img src="https://images.pexels.com/photos/6045224/pexels-photo-6045224.jpeg?auto=compress&cs=tinysrgb&w=600" id="two" height="120px" alt="images"> 2</li>
+            <li><img src="https://images.pexels.com/photos/6045224/pexels-photo-6045224.jpeg?auto=compress&cs=tinysrgb&w=600" id="three" height="120px" alt="images"> 3</li>
+            <li><img src="https://images.pexels.com/photos/6045224/pexels-photo-6045224.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="alert('hey everyone')" id="four" height="120px" alt="images"> 4</li>
+            <li><img src="https://images.pexels.com/photos/6045224/pexels-photo-6045224.jpeg?auto=compress&cs=tinysrgb&w=600" id="five" height="120px" alt="images"></li>
+            <a href="https://www.codewithharry.com/" id="harry" style="color: white; text-decoration: none; font-size: 24px;">Click me to redirect</a>
+        </ul>
+    </div>
+</body>
+<script>
+     // in the fourth image i have given a onclick event but that's not a good approach for scalable projects so u can apply below following events
+    // attachEvent
+    // Jquery - on
+     // this one is also not a suggested approach because it gives us the half information to get the full info 
+     // we have to use addEventListeners to listen events in js
+    //  document.getElementById('two').onclick = function (){
+    //     console.log("i'm clicked")
+    //  }
+    // topics to cover
+    // type ,timestamp , defaultPrevented
+    // target , toElement , srcElement , currentTarget 
+    // clientX , clientY , screenX , screenY
+    // altKey , ctrlkey , shirfkey , keycode
+
+    // document.getElementById('three').addEventListener('click',function(e){
+        // console.log(e)
+    // },false)
+    // we write false in the end like dependency if we want that our dom works in the downward to upward direction to invoke all types of events like child to parent node
+    // but if we write true here then it starts working from parent node to child node in that case firstly all events written on parent are executed then child nodes will execute
+    // example of this is below 
+    // there are two method while we use event 
+    // 1 is event bubbling 
+    // 2 is event capturing
+
+    // in this we are doing event bubbling
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('you clicked in the body of li')
+    // },false)
+    // document.getElementById('three').addEventListener('click',function(e){
+    //     console.log('owl is clicked')
+    //     e.stopPropagation() // by this we can stop bubbling of our event from child to parent or parent to child usin stop propagation
+    // },false)
+
+    // in this we are doing event capturing 
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('you clicked in the body of li')
+    // },false)
+    // document.getElementById('three').addEventListener('click',function(e){
+    //     console.log('owl is clicked')
+    //     e.stopPropagation()
+    // },false)
+    
+    // document.getElementById('harry').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log('you clicked on the link of code with harry website')
+    // },false)
+
+    // document.querySelector('ul').addEventListener('click',function(e){
+    //     console.log(e.target.parentNode) // by using this i have selected li becuase e.target selected image tag and i want to remove li from the lsit
+    //     let removeIt = e.target.parentNode 
+    //     // removeIt.remove() // that's a simple appraoch 
+    //     // u can also remove them using given below method 
+    //     removeIt.parentNode.removeChild(removeIt)
+    // },false)
+    // there is a problem in the above code that if we click on the li or ul it removes the whole tag we can fix that using checks
+
+    document.querySelector('ul').addEventListener('click',function(e){
+        console.log(e.target.tagName)
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode 
+            removeIt.parentNode.removeChild(removeIt)
+            console.log(e.target.id)
+        }
+    })
+     
+
+
+</script>
+</html>
