@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Gilroy;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background-color: gray;
+        }
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+        }
+        .child{
+            height: 200px;
+            width: 200px;
+            border: 2px solid white;
+            transition: 0.5s ease;
+        }
+        #field{
+            padding: 5px;
+            margin-top: 10px;
+            margin-left: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="child"></div>
+    <input type="text" id="field">
+    </div>
+
+</body>
+<script>
+    // selecting variables
+    let value = document.querySelector('#field')
+    let div = document.querySelector('.child')
+    
+    // creating a function to update the background as per the input field color
+    function updateBackground (){
+        const endVal = value.value
+        div.style.backgroundColor = endVal
+    }
+
+    // running add event listener to listen on input and call the function to update the color
+    value.addEventListener('input',updateBackground)
+
+</script>
+</html>
