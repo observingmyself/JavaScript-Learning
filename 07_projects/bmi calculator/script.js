@@ -15,7 +15,7 @@ form.addEventListener('submit',function(e){
   result.innerHTML = 'please give a valid weight'
  }
  else{
-   const bmi = weight / (meteres*meteres)
+   const bmi = (weight / (meteres*meteres)).toFixed(2)
    if(bmi < 18.6){
      result.innerHTML = `You are underweight and your body mass index is ${bmi}`
    }
