@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            background-color: black;
+            color: whitesmoke;
+        }
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #h2{
+            text-align: center;
+        }
+        img{
+            border : 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <img id="image" alt="">
+    <h2 id="h2">Followers : </h2>
+</div>
+</body>
+<script>
+    let url = 'https://api.github.com/users/hiteshchoudhary'
+    let xhr = new XMLHttpRequest()
+    let data;
+    xhr.open('GET',url)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+             data = JSON.parse(this.responseText)
+             let urll = data.avatar_url
+             let image = document.getElementById('image')
+             let followers = data.followers
+            //  console.log(followers)
+             image.setAttribute('src',urll)
+            document.getElementById('h2').innerHTML += followers
+        }
+    }
+    xhr.send()
+</script>
+</html>
