@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bod">
+        <ul id="parent" style="background-color: black;">
+            <li id="childs"><img height="120px" src="https://images.pexels.com/photos/5750777/pexels-photo-5750777.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li id="childs"><img height="120px" src="https://images.pexels.com/photos/5750777/pexels-photo-5750777.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li id="childs"><img height="120px" src="https://images.pexels.com/photos/5750777/pexels-photo-5750777.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li id="childs"><img height="120px" src="https://images.pexels.com/photos/5750777/pexels-photo-5750777.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li id="childs"><img height="120px" src="https://images.pexels.com/photos/5750777/pexels-photo-5750777.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li id="childs"><a id="anchor" href = "https://www.google.com" >click me </a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.querySelector('#parent').addEventListener('click',function(){
+        console.log('you clicked in the ul')
+    },true)
+    document.getElementById('childs').addEventListener('click',function(e){
+        console.log('you clicked the image')
+        console.log(e.target.parentNode)
+        let removeIt = e.target.parentNode
+        removeIt.parentNode.removeChild(removeIt)
+        // e.stopPropagation()
+    },true)
+    document.querySelector('#anchor').addEventListener('click',function(e){
+        e.preventDefault()
+        console.log('you clicked on the anchor tag')
+    })
+</script>
+</html>
