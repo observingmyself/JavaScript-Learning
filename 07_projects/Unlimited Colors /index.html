@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="../backgroundChanger/styles.css" />
+    <style>
+        #main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 900;
+            margin-top: 5px;
+        }
+        button:hover{
+            background-color: red;
+            color: white;
+        }
+    </style>
+  </head>
+  <body style="background-color: #212121; color: #fff;">
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav>
+    <div id="main" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    </div>
+    <script src="script.js"></script>
+
+  </body>
+</html>
