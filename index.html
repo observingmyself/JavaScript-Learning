@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: purple;
+        }
+        .main{
+            height: 400px;
+            width: 400px;
+            background : conic-gradient(white,black,white,black,white,black,white,black,white,black,white);
+            border-radius: 200px;
+            animation: golgol 0.5s linear infinite;
+        }
+        @keyframes golgol {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+    
+</body>
+</html>
